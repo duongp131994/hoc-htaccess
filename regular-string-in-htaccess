@@ -1,0 +1,25 @@
+[]              [abc], [a-zA-Z0-9]
+{}              [a-z]{5,12} == [a-z] have size from 5 to 12 characters, [a-zA-Z]{2,} == string has 2 characters or more, [^A-Z] == string has not uppercase character
+^ and $         ^[a->z]{5}$ == string have start character is a lowercase letter, end character is a lowercase letter and size by 5
+.               .{10,20}    == string has size is from 10 to 20 characters
++               size is 1/more
+*               size 0/more
+?               size 0/1
+[F]             Forbidden: reply from sever for the request is 403 page when access to unauthorized places
+[L]             Last rule: stop when previous step done
+[N]             next:
+[G]             Gone:      reply for client is error page not exist
+[P]             Proxy: chỉ định server điểu kiển các yêu cầu được ấn định bởi mod_proxy
+[C]             Chain: Chỉ định server thực hiện rule hiện hành song song với rule trước đó.
+[R]             Redirect: chỉ định server đổi hướng request sang một trang khác trong trường hợp trình duyệt gởi yêu cầu duyệt một trang được sửa chữa đường dẫn (rewrite) trước đó.
+[NC]            No-case: Chỉ định server match không phân biệt hoa thường
+[PT]            Pass Through: có nghĩa là dùng kí tự để buộc "rewrite engine" ấn định bảng giá trị của uri trở thành giá trị của tên files.
+[OR]            Toán tử kiểm tra từ trên xuống dưới, nếu điều kiện nào đúng thì dừng.
+[NE]            No Escape: Chỉ định server xử lí các gói tin trả về mà không dùng kí tự thoát
+[NS]            No Subrequest: Chỉ định server bỏ qua thư mục hiện hành nếu request nhắm vào thư mục con.
+[QSA]           Append Query String: chỉ định server gắn chuỗi truy vấn vào cuối cùng của URL
+[S=x]           Skip: Chỉ định server bỏ qua không xem xét  x rules tiếp theo nữa nếu một rule đã được thực thi.
+[T=MIME-type]   Khai báo định dạng files của server.
+-d              Kiểm tra thư mục có tồn tại hay không?
+-f              Kiểm tra file có tồn tại hay không
+-s              Kiểm tra giá trị của file có khác 0 hay không?
