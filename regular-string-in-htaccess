@@ -6,9 +6,9 @@
 *               size 0/more
 ?               size 0/1
 [F]             Forbidden: reply from sever for the request is 403 page when access to unauthorized places
-[L]             Last rule: stop when previous step done
+[L]             Last rule: stop after rewriteRule when previous step done
 [N]             next:
-[G]             Gone:      reply for client is error page not exist
+[G]             Gone: reply for client is error page not exist
 [P]             Proxy: chỉ định server điểu kiển các yêu cầu được ấn định bởi mod_proxy
 [C]             Chain: Chỉ định server thực hiện rule hiện hành song song với rule trước đó.
 [R]             Redirect: chỉ định server đổi hướng request sang một trang khác trong trường hợp trình duyệt gởi yêu cầu duyệt một trang được sửa chữa đường dẫn (rewrite) trước đó.
@@ -23,3 +23,17 @@
 -d              Kiểm tra thư mục có tồn tại hay không?
 -f              Kiểm tra file có tồn tại hay không
 -s              Kiểm tra giá trị của file có khác 0 hay không?
+
+
+thu tu rewrite url:
+
+.RewriteEngine:   turn on/turn off rewrite.
+
+....RewriteBase:  RewriteBase URL-path
+                  mod_rewrite áp dụng RewriteBase cho kết quả của RewriteRules, không phải cho các đối số của RewriteRules
+                  mod_rewrite biết phải thêm gì vào đầu mỗi đường dẫn tương đối.
+
+...RewriteRule:   RewriteEngine Pattern Substitution [flags]
+
+..RewriteCond:    RewriteCond  TestString CondPattern [flags]
+                  Viết điều kiện để RewriteRule phía dưới nó được ứng dụng.
